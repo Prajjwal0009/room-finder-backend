@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from api.models import Company,Room
-from api.serializers import CompanySerializer,RoomSerializers
+from api.models import Company,Room,ContactUS
+from api.serializers import CompanySerializer,RoomSerializers,ContactUSSerializers
 
 # Create your views here.
 class CompanyViewSet(viewsets.ModelViewSet):
@@ -11,4 +11,9 @@ class CompanyViewSet(viewsets.ModelViewSet):
 
 class RoomViewSet(viewsets.ModelViewSet):
  queryset=Room.objects.all()
- serializer_class=RoomSerializers       
+ serializer_class=RoomSerializers   
+
+
+class ContactUSViewSet(viewsets.ModelViewSet):
+ queryset=ContactUS.objects.all()
+ serializer_class=ContactUSSerializers       

@@ -20,6 +20,12 @@ class Room(models.Model):
    location=models.CharField(max_length=50)
    price= models.IntegerField()
    image=models.ImageField(upload_to ='uploads/', blank=True, default='default_image.jpg')
+   added_date=models.DateTimeField(auto_now=True)
    
-
+   
+class ContactUS(models.Model):
+    id=models.AutoField(primary_key=True)
+    name= models.CharField(max_length=100)
+    email= models.EmailField(max_length=50)
+    message=models.TextField()
   
